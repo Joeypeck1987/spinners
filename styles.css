@@ -1,0 +1,238 @@
+body {
+    background-color: #18181A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* spinner 1 */
+.spinner-1 {
+    margin: 100px;
+    position: relative;
+}
+
+.rect-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: #E9804D;
+    animation: turn 2s ease-in-out 0s 5;
+}
+
+.rect-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: #EB6123;
+    animation: turn 2s ease-in-out 1s infinite;
+}
+
+@keyframes turn{
+    0%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* spinner 2 */
+
+.spinner-2 {
+    margin: 100px;
+}
+
+.circle {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #E9804D;
+    display: inline-block;
+}
+#circle-1 {
+    animation: ball 2s linear 0s infinite,
+    color 2s linear 0.2s infinite;
+}
+#circle-2 {
+    animation: color 2s linear 0.4s infinite;
+}
+#circle-3 {
+    animation: color 2s linear 0.6s infinite;
+}
+#circle-4 {
+    animation: color 2s linear 0.8s infinite;
+}
+#circle-5 {
+    animation: ball-2 2s linear 1s infinite,
+    color 2s linear 1s infinite;
+}
+
+@keyframes ball{
+    0%{
+        transform: translateY(-40px)
+        translateX(-80px);
+    }
+    20%, 80% {
+        transform: translateY(0px)
+        translateX(0px);
+    }
+    100% {
+        transform: translateY(-40px)
+        translateX(-80px);
+    }
+}
+
+@keyframes ball-2{
+    0%{
+        transform: translateY(-40px)
+        translateX(80px);
+    }
+    20%, 80% {
+        transform: translateY(0px)
+        translateX(0px);
+    }
+    100% {
+        transform: translateY(-40px)
+        translateX(80px);
+    }
+}
+
+@keyframes color{
+    0% {
+        background-color: #EB6123;
+    }
+    20%, 80% {
+        background-color: #E9804D;
+    }
+    100% {
+        background-color: #EB6123;
+    }
+}
+
+/* spinner 3 */
+
+.spinner-3 {
+    margin: 50px;
+    position: relative;
+}
+
+.inner {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 4px solid transparent;
+    border-top-color: #E9804D;
+    border-bottom-color: #E9804D;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    animation: turn 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s infinite;
+}
+
+.outer {
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    border: 4px solid transparent;
+    border-left-color: #EB6123;
+    border-right-color: #EB6123;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    animation: turn 2s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s infinite;
+}
+
+/* spinner 4 */
+
+.spinner-4 {
+    margin-top: 250px;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: #E9804D;
+    position: relative;
+}
+.box::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    top: 42%;
+    background-color: #EB6123;
+    animation: ballinbox 2s linear 0s infinite;
+}
+.box::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    top: 42%;
+    opacity: 0.5;
+    background-color: #EB6123;
+    animation: ballinbox 2s linear 0.05s infinite;
+}
+
+@keyframes ballinbox {
+    0% {
+        transform: translateX(0px)
+        translateY(0px);
+    }
+    25% {
+        transform: translateX(62.5px)
+        translateY(62.5px);
+    }
+    50% {
+        transform: translateX(125px)
+        translateY(0px);
+    }
+    75% {
+        transform: translateX(62.5px)
+        translateY(-62.5px);
+    }
+}
+
+/* spinner 5 */
+.spinner-5{
+    margin: 100px;
+}
+
+.cle {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: #E9804D;
+    animation: size 2s cubic-bezier(0.215, 0.610, 0.355, 1) 0s infinite;
+}
+.cle::after {
+    content: '';
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 4px solid transparent;
+    border-top-color: #EB6123;
+    border-bottom-color: #EB6123;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    animation: turn 2s linear 0s infinite;
+}
+@keyframes size {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
